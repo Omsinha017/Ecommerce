@@ -1,0 +1,41 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "T-Shirt",
+        "slug": "t-shirt",
+        "description": "awesome tshrt",
+        "price": "12.34",
+        "image": "products/8247/8247.png",
+        "featured": false,
+        "timestamp": "2020-08-08T21:53:42.816Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Hat",
+        "slug": "hat-ieon",
+        "description": "awesome one",
+        "price": "31.22",
+        "image": "products/3052/3052.png",
+        "featured": true,
+        "timestamp": "2020-08-08T21:53:42.816Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "new",
+        "slug": "new",
+        "description": "df",
+        "price": "22.22",
+        "image": "products/7323/7323.png",
+        "featured": false,
+        "timestamp": "2020-08-08T21:53:42.816Z"
+    }
+}
+]
