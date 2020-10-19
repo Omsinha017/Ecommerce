@@ -1,7 +1,5 @@
 import datetime
 
-
-
 AWS_GEOUP_NAME = 'Om-Ecommerce-group'
 AWS_USERNAME = 'om-ecommerce'
 AWS_ACCESS_KEY_ID = "AKIAX4VFOA3N3TRAOKER"
@@ -28,5 +26,3 @@ AWS_HEADERS = {
     'Expires': expires,
     'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
 }
-
-AWS_QUERYSTRING_AUTH = True
