@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'accounts',
     'billing',
     'addresses',
-    'marketing'
+    'marketing',
+    'storages'
 ]
 
 # BackUp Fixtures -- python manage.py dumpdata products --format json --indent 4 > products/fixtures/products.json
@@ -159,7 +160,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
 
-
 CORS_REPLACE_HTTPS_REFERER      = False
 HOST_SCHEME                     = "http://"
 SECURE_PROXY_SSL_HEADER         = None
@@ -169,3 +169,4 @@ CSRF_COOKIE_SECURE              = False
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
+

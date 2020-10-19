@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'accounts',
     'billing',
     'addresses',
-    'marketing'
+    'marketing',
+    'storages'
 ]
 
 # BackUp Fixtures -- python manage.py dumpdata products --format json --indent 4 > products/fixtures/products.json
@@ -162,8 +163,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
-
-
+from ecommerce.aws.conf import *
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
