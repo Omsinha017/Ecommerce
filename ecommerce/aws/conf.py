@@ -1,7 +1,4 @@
 import datetime
-
-AWS_GEOUP_NAME = 'Om-Ecommerce-group'
-AWS_USERNAME = 'om-ecommerce'
 AWS_ACCESS_KEY_ID = "AKIAX4VFOA3N3TRAOKER"
 AWS_SECRET_ACCESS_KEY = "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"
 AWS_FILE_EXPIRE = 200
@@ -10,8 +7,8 @@ AWS_QUERYSTRING_AUTH = True
 
 DEFAULT_FILE_STORAGE = 'ecommerce.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'ecommerce.aws.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'om-ecommerce'
-S3DIRECT_REGION = 'ap-south-1'
+AWS_STORAGE_BUCKET_NAME = 'ecommerce-om'
+S3DIRECT_REGION = 'us-west-2'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
