@@ -165,7 +165,15 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
-from ecommerce.aws.conf import *
+
+AWS_ACCESS_KEY_ID = "AKIAX4VFOA3N3TRAOKER"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = 'ecommerce-om'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACT = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
