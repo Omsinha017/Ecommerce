@@ -43,7 +43,6 @@ class ProductDetailSlugView(ObjectViewedMixin, DetailView):
             qs = Product.objects.filter(slug=slug)
         except:
             raise Http404("Uhmmm ")
-
         object_viewed_signal.send(instance.__class__, instance=instance, request=request)
         return instance
 

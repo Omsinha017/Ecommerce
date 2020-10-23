@@ -7,7 +7,8 @@ User = settings.AUTH_USER_MODEL
 
 import stripe
 
-stripe.api_key = 'sk_test_51HYzQfFTzilNLdNsovvquEhQaZ0QbIgZuRF6SO1uTleaFy2v7DGsao9jHNPj1HyuNaBwqdGh45nNQ2HNYRpjnoBp009wyDFnhb'
+STRIPE_SECRET_KEY = getattr(settings, "STRIPE_SECRET_KEY" , 'sk_test_51HYzQfFTzilNLdNsovvquEhQaZ0QbIgZuRF6SO1uTleaFy2v7DGsao9jHNPj1HyuNaBwqdGh45nNQ2HNYRpjnoBp009wyDFnhb')
+stripe.api_key = STRIPE_SECRET_KEY
 
 
 
