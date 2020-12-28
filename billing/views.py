@@ -12,9 +12,6 @@ STRIPE_PUB_KEY = getattr(settings, "STRIPE_PUB_KEY", 'pk_test_51HYzQfFTzilNLdNs7
 stripe.api_key = STRIPE_SECRET_KEY
 
 def payment_method_view(request):
-    # if request.user.is_authenticated:
-    #     billing_profile = request.user.billingprofile
-    #     my_customer_id = billing_profile.customer_id
 
     billing_profile ,billing_profile_created = BillingProfile.objects.new_or_get(request)
     if not billing_profile:

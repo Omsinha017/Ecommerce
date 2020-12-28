@@ -27,7 +27,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testingpurpose030@gmail.com' 
+EMAIL_HOST_PASSWORD = 'Testing@123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'OM-ECOMMERCE <testingpurpose030@gmail.com>'
+BASE_URL = '127.0.0.1:8000'
 
+MANAGERS = (
+    ('Om Sinha', "testingpurpose030@gmail.com"),
+
+)
+ADMINS = MANAGERS
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,6 +65,9 @@ INSTALLED_APPS = [
 # BackUp Fixtures -- python manage.py dumpdata products --format json --indent 4 > products/fixtures/products.json
 
 AUTH_USER_MODEL = 'accounts.User'   # changes the built-in user model to ours
+LOGIN_URL = '/login'
+LOGIN_URL_REDIRECT = '/'
+LOGOUT_URL = '/logout/'
 
 
 MAILCHIMP_API_KEY = "6fadee28b819e1463b5740be935be68a-us2"

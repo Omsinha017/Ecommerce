@@ -55,6 +55,9 @@ INSTALLED_APPS = [
 # BackUp Fixtures -- python manage.py dumpdata products --format json --indent 4 > products/fixtures/products.json
 
 AUTH_USER_MODEL = 'accounts.User'   # changes the built-in user model to ours
+LOGIN_URL = '/login'
+LOGIN_URL_REDIRECT = '/'
+LOGOUT_URL = '/logout/'
 
 
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')

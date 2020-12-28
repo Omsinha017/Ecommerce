@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center py-5">
+        
+        {% if key %}
+            <h1 class="my-5 py-5">Activation Error. Please Try again!</h1>
+        {% else %}
+            <h1 class="my-5 py-5">Reactivate your Email below.</h1>
+        {% endif %}
+    </div>
+    <div class="col-12 text-center">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-default" type="submit" value="Resend Activation">
+        </form>
+    </div>
+</div>
+{% endblock content %}
