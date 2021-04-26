@@ -167,6 +167,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
+PROTECTED_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "protected_media")
+
 
 AWS_ACCESS_KEY_ID = "AKIAX4VFOA3N3TRAOKER"
 AWS_SECRET_ACCESS_KEY = "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"
@@ -175,6 +177,11 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACT = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+PROTECTED_DIR_NAME = 'protected'
+PROTECTED_MEDIA_URL = '//%s.s3.amazonaws.com/%s/' %( AWS_STORAGE_BUCKET_NAME, PROTECTED_DIR_NAME)
+AWS_DOWNLOAD_EXPIRE = 5000 #(0ptional, in milliseconds)
+S3DIRECT_REGION =  'us-west-2' 
+
 
 
 CORS_REPLACE_HTTPS_REFERER      = False

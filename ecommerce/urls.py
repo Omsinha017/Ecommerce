@@ -13,6 +13,7 @@ from addresses.views import checkout_address_create_view,checkout_address_reuse_
 from carts.views import cart_detail_api_view
 from marketing.views import MarketingPreferenceUpdateView, MailchimpWebhookView
 from orders.views import LibrarayView
+from analytics.views import SalesView, SalesAjaxView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,6 +22,8 @@ urlpatterns = [
     url(r'^account/',include(("accounts.urls",'accounts'),namespace="account")),
     url(r'^orders/',include(("orders.urls",'orders'),namespace="orders")),
     url(r'^accounts/',include("accounts.passwords.urls")),
+    url(r'^analytics/sales/$',SalesView.as_view(),name="sales-analytics"),
+    url(r'^analytics/sales/data/$',SalesAjaxView.as_view(),name="sales-analytics-data"),
     url(r'^contact/$',views.Contact_page,name="contact"),
     url(r'^login/$',LoginView.as_view(),name="login"),
     url(r'^register/guest/$',GuestRegisterView.as_view(),name="guest_register"),

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row my-5">
+    <div class="col-12">
+        <h1>Sales Data</h1>
+    </div>
+</div>
+
+<hr>
+<div class="row my-5">
+    <div class="col-4">
+        <h3>Today's Sales</h3>
+        <hr>
+        <p>Order's Total : ${{ today.recent_data.total__sum }}</p>
+        <ol>
+            {% for order in today.recent|slice:":5" %}
+                <li>{{order.order_id}}
+                {{order.total}}
+                {{order.updated}}</li>
+            {% endfor %}
+        </ol>
+        <h3>This Week's Sales</h3>
+        <hr>
+        <p>Order's Total : ${{ this_week.recent_data.total__sum }}</p>
+        <ol>
+            {% for order in this_week.recent|slice:":5" %}
+                <li>{{order.order_id}}
+                {{order.total}}
+                {{order.updated}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="col">
+        <canvas class="om-render-chart" id="thisWeekSales" data-type="week" width="400" height="400"></canvas>
+    </div>
+</div>
+<hr>
+<div class="row my-5">
+        <div class="col-12">
+            <h3>Previous 4 Weeks</h3>
+        </div>
+        <div class="col">
+            <p>Order's Total : ${{ last_four_weeks.recent_data.total__sum }}</p>
+            <p>Shipped Total : {% if last_four_weeks.shipped_data.total__sum %}${{ last_four_weeks.shipped_data.total__sum }}{% endif %}</p>
+            <p>Paid Totals : ${{ last_four_weeks.paid_data.total__sum }}</p>
+        </div>
+
+        <div class="col">
+            <canvas class="om-render-chart" id="4weeksago" data-type="4weeksago" width="400" height="400"></canvas>
+        </div>
+</div>
+  
+{% endblock content %}
