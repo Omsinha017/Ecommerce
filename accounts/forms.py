@@ -27,8 +27,8 @@ class UserAdminCreationForm(forms.ModelForm):
     A form for creating new users. Includes all the required
     fields, plus a repeated password.
     """
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={"class":"form-control"}))
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput(attrs={"class":"form-control"}))
 
     class Meta:
         model = User
@@ -123,13 +123,15 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(forms.ModelForm):
-  
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+
+    name = forms.CharField(label='Name',widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter Your Name"}))
+    email = forms.EmailField(label='Email',widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter Your Email"}))
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Enter Your Password"}))
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Confirm Your password"}))
 
     class Meta:
         model = User
-        fields = ('full_name','email')
+        fields = ()
 
     def clean_password2(self):
         # Check that the two password entries match
